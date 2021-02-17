@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTC Website</title>
+    <style>
+        @font-face {
+            font-family: IkarosSans;
+            src: url(Ikaros-Regular.otf);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            background-size: 100%, 100%;
+            color: white;
+            }
+        
+        #navbar {
+            background-color: rgb(15, 15, 15);
+            font-family: IkarosSans;
+            position: fixed; 
+            top: -50px;
+            width: 100%; 
+            transition: top 0.3s; 
+            }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            transition-duration: 1s;
+            }
+
+        #navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        .MainImage {
+            background-color: black;
+            color: white;
+            height: 1080px;
+            width: 100%;
+        }
+
+        .TTC {
+            color: white;
+            font-family: IkarosSans;
+            font-size: 300px;
+            position: absolute;
+            top: 200px;
+            left: 100px;
+        }
+
+        .UnderTitel {
+            color: white;
+            font-family: IkarosSans;
+            font-size: 50px;
+            position: absolute;
+            top: 510px;
+            left: 110px;
+        }
+
+        .Description {
+            color: rgb(187, 187, 187);
+            font-family: IkarosSans;
+            font-size: 22px;
+            position: absolute;
+            top: 580px;
+            left: 110px;
+        }
+
+        .Text {
+            background-color: rgba(255, 255, 255, 0);
+            font-family: IkarosSans;
+            font-size: 50px;
+            color: black;
+            height: 3000px;
+            width: 100%;
+        }
+
+        .Header {
+            background-color: white;
+            color: black;
+            padding-left: 50px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            width: auto;
+        }
+
+        .Maindescription {
+            background-color: white;
+            font-family:sans-serif;
+            padding-top: 50px;
+            padding-left: 300px;
+            padding-right: 300px;
+            padding-bottom: 50px;
+            color: black;
+            font-size: 25px;
+            box-shadow: 0 0 8px black;
+            width: auto;
+        }
+
+        .DownloadOptions {
+            font-family: IkarosSans;
+            background-color: black;
+            height: 700px;
+            width: 100%;
+        }
+
+        .DownloadFree {
+            position:relative;
+            border: 2px solid white;
+            border-radius: 25px;
+            height: 600px;
+            width: 300px;
+            color: white;
+            left: 31%;
+            top: 50px;
+            text-align: center;
+            box-shadow: 0 0 16px gray;
+        }
+
+        .DownloadPremium {
+            position: absolute;
+            height: 600px;
+            width: 300px;
+            border: 2px solid white;
+            border-radius: 25px;
+            color: white;
+            right: 31%;
+            top: 1730px;
+            text-align: center;
+            box-shadow: 0 0 16px gray;
+        }
+
+        .DownloadButtonFree {
+            position: relative;
+            background-color: rgb(50, 173, 70);
+            top: 50px;
+            height: 50px;
+            width: 250px;
+            border: 2px solid rgb(50, 173, 70);
+            border-radius: 10px;
+            cursor: pointer;
+            transition-duration: 1s;
+            font-size: 40px;
+            font-family: IkarosSans;
+            box-shadow: 0 0 2px black;
+            padding-bottom: 8px;
+        }
+
+        .DownloadButtonFree:hover {
+            background-color: rgb(207, 207, 207);
+            border: 2px solid white;
+            box-shadow: 0 0 8px white;
+        }
+
+        .DownloadButtonPremium {
+            position: relative;
+            background-color: rgb(207, 207, 207);
+            top: 50px;
+            height: 50px;
+            width: 250px;
+            border: 2px solid rgb(207, 207, 207);
+            border-radius: 10px;
+            cursor: pointer;
+            transition-duration: 0ms;
+            font-size: 40px;
+            font-family: IkarosSans;
+            box-shadow: 0 0 2px black;
+            padding-bottom: 8px;
+        }
+
+        .Downloaddescription {
+            color: white;
+            font-size: 20px;
+            height: 400px;
+            width: 280px;
+        }
+
+        .About {
+            background-color: white;
+            width: 100%;
+        }
+
+        .DiscordJoin {
+            background-color: #43b581;
+            color: white;
+            width: 100px;
+            height: 45px;
+            border: 2px solid #43b581;
+            border-radius: 3px;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            align-content: center;
+        }
+
+        .DiscordJoin:hover {
+            background-color: #68d1a2;
+            border: 2px solid #68d1a2;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 720 || document.documentElement.scrollTop > 720) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-50px";
+          }
+        }
+
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+
+        function dwldFunction() {
+        document.body.scrollTop = 1500;
+        document.documentElement.scrollTop = 1500;
+        }
+
+        function contactFunction() {
+        document.body.scrollTop = 2900;
+        document.documentElement.scrollTop = 2900;
+        }
+
+        function supportFunction() {
+        document.body.scrollTop = 2500;
+        document.documentElement.scrollTop = 2500;
+        }
+
+    </script>
+    <div id="navbar">
+        <a onclick="topFunction()" href="#home">Home</a>
+        <a onclick="dwldFunction()" href="#downloads">Download</a>
+        <a onclick="contactFunction()" href="#contact">Contact</a>
+        <a onclick="supportFunction()" href="#support">Support Us</a>
+      </div>
+    <div class="MainImage">
+        <img src="Thing.png" style="width: auto; height: auto;">
+        <div class="TTC">TTC</div>
+        <div class="UnderTitel">A powerfull hacked client</div>
+        <div class="Description">TTC is a powerfull hacked client with strong features like:<br>
+            -Fast KillAura<br>
+            -Elytraflight<br>
+            -Elytrabot<br>
+            -Reliable Autototem<br>
+        </div>
+    </div>
+    <div class="Text">
+        <div class="Header">
+            Why you should use TTC
+        </div>
+        <div class="Maindescription">
+            TTC is one of the most high quality free 1.12 clients that exist today. With tens of features, it is well equipped for Anarchy Servers of all Sorts.<br> 
+            Its fast and easily customizable Killaura combined with an Autototem that actually works make it espacially stand out for 32k Pvp and the Crystalaura is worthy of each paid Client out there. 
+            TTC also includes many features that are completely new, like multiple modes of ElytraBotting that allow for simple things like Orbiting Spawn, as well as complex tasks like fighting.<br> <br> 
+            When buying the Premium version, you get even more! Tons of exclusive features will make you destroy your Enemy. Yada Yada Yada<br>
+        </div>
+        <div class="Header">
+            How to get TTC
+        </div>
+        <div class="DownloadOptions">
+            <div class="DownloadFree">
+                Free <br>
+                <div class="Downloaddescription">
+                    Look its free! <br>
+                    -Antivirus proven: Safe<br>
+                    -
+                </div>
+                <a href="http://motriael.com/9AWU"><button class="DownloadButtonFree">Download</button></a>
+            </div>
+            <div class="DownloadPremium">
+                Premium
+                <div class="Downloaddescription">
+                    Look its payed, but just like 2$ for a lifetime use. Thats a hecking good deal, considering the amount of features you get!<br>
+                    Unfortunatly, were currently out of stock. Sry
+                </div>
+                <a href="Sike Bitch"><button disabled type="button" class="DownloadButtonPremium">Out of Stock</button></a>
+            </div>
+        </div>
+        <div class="About">
+            <div class="Header">About</div>
+            <div class="Maindescription">
+                This is a Project by TudbuT. He first wanted to make a private client etc yada yada yada<br>
+                 <br>
+                 DISCLAIMER:<br>
+                 This client isnt subtle! Its not suposed to be! This client was developed for Anarchy servers, and doesnt try to disguise itself on  servers like Hypixel etc.<br>
+                  <br>
+                 Join the Discord: <a href="https://discord.gg/TupsrvVtrj"><button class="DiscordJoin">Join</button></a>               
+            </div>
+        </div>
+        <div class="Header">
+            Support the TudbuT!
+        </div>
+        <div class=Maindescription>
+            It took time to make this thing. Actually, It took over /insert weeks here/, just to get to the Point where we are now. If you want to be super mega awesome, and support this Project for the Future,
+            feel free to Donate at TudbuTs Patreon. As a thank-you, you will receive Updates on both versions on the clients early and maybe you are even able to beta-test new Features?
+            You will be able to vote for the primary Content of new Updates, and help TTC exist for the Future.
+        </div>
+        <div class="Header">
+            Contact
+        </div>
+        <div class="Maindescription">
+            For Contact regarding payments please write us over:<br>
+            bestimmt.echte@adresse.com or<br>
+             <br>
+            PO Box 17839 <br>
+            OLDBURY <br>
+            B69 9GN <br>
+             <br>
+            You may also call us over +69 4206942069<br>
+        </div>
+    </div>
+</body>
+</html>
